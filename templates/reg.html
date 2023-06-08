@@ -1,0 +1,61 @@
+<html>
+{% load staticfiles %}
+<head>
+    <title>HOME PAGE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+
+     #box{
+         background-image:url("{% static 'bg.jpg'  %}");
+         opacity:0.9;
+     }
+     #box1{
+         background-color:white;
+     }
+     .form-control{
+         border-color: blue;
+     }
+
+ </style>
+</head>
+<body class="main">
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6" id="box1">
+            <form method="post">
+                {% csrf_token %}
+                <h1>REGISTER</h1>
+                <div class="form-group">NAME:<input type="text" name="name"  class="form-control"></div>
+                <div class="form-group">EMAIL:<input type="email" name="email" class="form-control"></div>
+                <div class="form-group">PASSWORD:<input type="password" name="password"  class="form-control"></div>
+                <div class="form-group">MOBILE:<input type="number" name="mobile"  class="form-control"></div>
+                <div class="form-group">ADDRESS:<input type="text" name="address"  class="form-control"></div>
+                <div class="form-group">PINCODE:<input type="number" name="pincode"  class="form-control"></div><br>
+                <input type="submit" value="REGISTER" style="background: #ad5389;
+         background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
+         background: linear-gradient(to right, #3c1053, #ad5389);border-radius:10px;width:120px;height:45px;margin-left:80px;color:white">
+
+
+            </form>
+        </div>
+        <div class="col-sm-6" id="box">
+            <h1 style="color:white;font-family: 'Poppins', sans-serif;margin-left:35px;margin-top:65px;">ReG!StER<br>HERE</h1>
+            <p style="color:white;font-style: italic;margin-left:35px">enter your name,email<br>password....mobile number<br>address>>>>pincode </p>
+            <svg style="width:40px;height:40px;margin-left:40px;color:white;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
+</svg><br><br>
+
+            <a href="{% url 'index' %}"><input type="button" value="HoMe" style="border-color:white;background:transparent;color:white;font-family: 'Poppins', sans-serif;margin-left:35px;width:110px;border-radius:13px;height:30px;"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
